@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -47,13 +48,11 @@ typedef struct Node
 	int data;
 	struct Node* next;
 } Node;
-Node* stack = NULL;
+extern Node* stack;
 
-void push(stack_t **stack, unsigned int line_cnt);
-void pall(stack_t **stack, unsigned int line_cnt);
-void pint(stack_t **stack, unsigned int line_cnt);
-void swap(stack_t **stack, unsigned int line_cnt);
-void pop(stack_t **stack, unsigned int line_cnt);
-void nop(stack_t **stack, unsigned int line_cnt);
+void pall();
+void push(int value);
+void parse_line(const char* line);
+void interpret(const char* filename);
 
 #endif /*MONTY_H*/
