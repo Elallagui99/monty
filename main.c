@@ -21,7 +21,20 @@ void parse_line(const char* line)
 			fprintf(stderr, "Error: Unknown opcode - %s\n", opcode);
 			exit(EXIT_FAILURE);
 		}
-	} else
+	}
+	else if (sscanf(line, "%9s", opcode) == 1)
+	{
+		if (strcmp(opcode, "pall") == 0)
+		{
+			pall();
+		}
+		else
+		{
+			fprintf(stderr, "Error: Invalid instruction - %s\n", line);
+			exit(EXIT_FAILURE);
+		}
+	}
+	else
 	{
 			fprintf(stderr, "Error: Invalid instruction - %s\n", line);
 			exit(EXIT_FAILURE);
