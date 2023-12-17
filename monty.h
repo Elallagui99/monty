@@ -46,13 +46,13 @@ typedef struct instruction_s
 typedef struct Node
 {
 	int data;
-	struct Node* next;
+	struct Node *next;
 } Node;
-extern Node* stack;
+extern Node *stack;
 
-void pall();
+void pall(void);
 void push(int value);
-void parse_line(const char* line);
-void interpret(const char* filename);
+void parse_line(const char *line);
+void interpret(const char *filename);
 
 #endif /*MONTY_H*/

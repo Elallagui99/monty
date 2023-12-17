@@ -1,8 +1,12 @@
 #include "monty.h"
 
-void pall()
+/**
+*pall - show up what in files
+*/
+
+void pall(void)
 {
-	Node* current = stack;
+	Node *current = stack;
 
 	while (current)
 	{

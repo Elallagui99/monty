@@ -1,7 +1,10 @@
 #include "monty.h"
+/**
+*parse_line - check input
+*@line: input
+*/
 
-
-void parse_line(const char* line)
+void parse_line(const char *line)
 {
 	char opcode[10];
 	int value;
@@ -41,9 +44,14 @@ void parse_line(const char* line)
 	}
 }
 
-void interpret(const char* filename)
+/**
+*interpret - open file function
+*@filename: the file
+*/
+
+void interpret(const char *filename)
 {
-	FILE* file = fopen(filename, "r");
+	FILE *file = fopen(filename, "r");
 	char line[256];
 
 	if (!file)
@@ -60,9 +68,16 @@ void interpret(const char* filename)
 	fclose(file);
 }
 
-Node* stack = NULL;
+/**
+*main - main function for monty
+*@argc: for file
+*@argv: for command
+*Return: 0
+*/
 
-int main(int argc, char* argv[])
+Node *stack = NULL;
+
+int main(int argc, char *argv[])
 {
 	if (argc != 2)
 	{
@@ -72,6 +87,6 @@ int main(int argc, char* argv[])
 
 	interpret(argv[1]);
 
-	return 0;
+	return (0);
 }
 
