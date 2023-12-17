@@ -44,14 +44,13 @@ void parse_line(const char* line)
 void interpret(const char* filename)
 {
 	FILE* file = fopen(filename, "r");
+	char line[256];
 
 	if (!file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", filename);
 		exit(EXIT_FAILURE);
 	}
-
-	char line[256];
 
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
